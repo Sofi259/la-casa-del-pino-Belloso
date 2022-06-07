@@ -999,6 +999,13 @@ body {
   }
 }
 
+#aside .utilities .form-control:focus {
+  color: #212029;
+  background-color: #fff;
+  border-color: #d9d9d9;
+  box-shadow: 0 0 0 0.2rem rgba(211, 212, 213, 0.5);
+}
+
 @media all and (max-width: 768px) {
   #aside #prod-cat {
     margin-top: 2rem;

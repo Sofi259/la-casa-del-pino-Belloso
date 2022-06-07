@@ -704,6 +704,12 @@ body{
 		@include media-up(md) {
 			align-self: center;
 		}
+		& .form-control:focus {
+	  	color: #212029;
+	  	background-color: #fff;
+	  	border-color: #d9d9d9;
+	  	box-shadow: 0 0 0 0.20rem rgba(211, 212, 213, 0.5);
+		}
 	}
 	& #prod-cat{
 		@include media-up(md) {
