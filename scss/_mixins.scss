@@ -3,6 +3,9 @@
  	background-color: map-get($colores,secondary);
   border-color: map-get($colores,secondary);
   font-weight: 700;
+  @include media-up(sm) {
+		font-size: .85rem;
+	}
   &:active:focus{
   	box-shadow: none;
  	}	

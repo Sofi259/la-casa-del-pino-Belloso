@@ -14,6 +14,7 @@ body{
 	overflow-x: hidden;
 }
 #header{
+	grid-area: header;
   background-color: rgba(212, 97, 4, 1);
   height: 1.5rem;
 }
@@ -238,106 +239,131 @@ body{
 	}
 }
 .catalogue{
-	grid-area: productos;
-}
-.catalogue-container{
-	@include media-up(sm) {
-		flex-direction: column;
-		align-items: center;
-	}
-	& .prod-2{
-		@include media-up(sm) {
-			margin-top: 1.5rem;
-		}
-	}
-	& .prod, .prod-2{
-		position: relative;
-		& .name{
-			font-size: map-get($font-size,small);
-			@include media-up(lg) {
-				font-size: map-get($font-size-mq, small);
+		grid-area: productos;
+		.catalogue-container{
+			@include media-up(sm) {
+				flex-direction: column;
+				align-items: center;
 			}
-			@include media-up(md) {
-				font-size: map-get($font-size-mq, small);
+			& .prod-2{
+				@include media-up(sm) {
+					margin-top: 1.5rem;
+				}
 			}
-		}
-		& .back{
-			background-color: white;
-			position: absolute;
-			height: 100%;
-			opacity: 0;
-			&:hover{
-				animation-name: slide-in-left;
-				animation-timing-function: ease-out;
-				animation-fill-mode: both;
-				animation-duration: 0.3s;
+			& .prod-2-last{
+				display: flex;
+				@include media-up(sm) {
+					display: none;
+				}
 			}
-		& .text{
-			font-size: map-get($font-size,small);
-			@include media-up(lg) {
-				font-size: map-get($font-size-mq, small);
+			& .prod, .prod-2, .prod-2-last{
+				position: relative;
+				& .front{
+					height: 100%;
+					& .name{
+						font-size: map-get($font-size,small);
+						@include media-up(lg) {
+							font-size: map-get($font-size-mq, small);
+						}
+						@include media-up(md) {
+							font-size: map-get($font-size-mq, small);
+						}
+					}
+				}
+				& .back{
+					background-color: white;
+					position: absolute;
+					height: 100%;
+					opacity: 0;
+					&:hover{
+						animation-name: slide-in-left;
+						animation-timing-function: ease-out;
+						animation-fill-mode: both;
+						animation-duration: 0.3s;
+					}
+				& .text{
+					font-size: map-get($font-size,small);
+					@include media-up(lg) {
+						font-size: map-get($font-size-mq, small);
+					}
+					@include media-up(sm) {
+						font-size: .9rem;
+					}
+					li{
+						&::before{
+							content: " ";
+							background-image: url("data:image/svg+xml,%3Csvg width='8' height='16' viewBox='0 0 12 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L11 11L1 21' stroke='%23818181' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+							width: 8px;
+							height: 16px;
+							display: inline-block;
+							margin-right: .2rem;
+							@include media-up(sm) {
+								background-image: url("data:image/svg+xml,%3Csvg width='6' height='16' viewBox='0 0 12 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L11 11L1 21' stroke='%23818181' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+								width: 6px;
+								height: 14px;
+							}
+						}
+					}
+				}
+				& .title{
+					font-size: map-get($font-size,medium);
+					margin-bottom: .5rem;
+					@include media-up(lg) {
+						font-size: map-get($font-size-mq, medium);
+						font-weight: map-get($font-weight, medium);
+					}
+				}
+				ul{
+					list-style: none;
+					padding-left: 1rem;
+				}
 			}
-			li{
-				&::before{
-					content: " ";
-					background-image: url("data:image/svg+xml,%3Csvg width='8' height='18' viewBox='0 0 12 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L11 11L1 21' stroke='%23818181' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-					width: 8px;
-					height: 18px;
-					display: inline-block;
-					margin-right: .2rem;
+			& .front{
+				position: relative;
+			}
+			%img-container{
+				height: 200px;
+				@include media-up(lg) {
+					height: 150px;
+				}
+				@include media-up(sm) {
+					height: 180px;
+				}
+			}
+			.H-img{
+				@extend %img-container;
+				width: 200px;
+				@include media-up(lg) {
+					width: 150px;
+				}
+				@include media-up(sm) {
+					width: 180px;
+				}
+			}
+			.V-img{
+				@extend %img-container;
+				width: 100px;
+				@include media-up(lg) {
+					width: 70px;
+				}
+				@include media-up(sm) {
+					width: 100px;
+				}
+			}
+			.H-fina{
+				width: 250px;
+				height: 150px;
+				@include media-up(md) {
+					width: 180px;
+					height: 130px;
+				}
+				@include media-up(lg) {
+					width: 180px;
+					height: 130px;
 				}
 			}
 		}
-		& .title{
-			font-size: map-get($font-size,medium);
-			margin-bottom: .5rem;
-			@include media-up(lg) {
-				font-size: map-get($font-size-mq, medium);
-				font-weight: map-get($font-weight, medium);
-			}
-		}
-		ul{
-			list-style: none;
-			padding-left: 1rem;
-		}
 	}
-	& .front{
-		position: relative;
-	}
-	.H-fina{
-		width: 300px;
-		height: 200px;
-	}
-	%img-container{
-		height: 200px;
-		@include media-up(lg) {
-			height: 150px;
-		}
-		@include media-up(sm) {
-			height: 200px;
-		}
-	}
-	.H-img{
-		@extend %img-container;
-		width: 200px;
-		@include media-up(lg) {
-			width: 150px;
-		}
-		@include media-up(sm) {
-			width: 200px;
-		}
-	}
-	.V-img{
-		@extend %img-container;
-		width: 100px;
-		@include media-up(lg) {
-			width: 70px;
-		}
-		@include media-up(sm) {
-			width: 100px;
-		}
-	}
-}
 }
 
 .contact-card{
@@ -346,33 +372,43 @@ body{
 	}
 	& .btn{
 		@include btns;
-  	}		
+  }		
 	& .title{
-			font-size: map-get($font-size,regular);
-			@include media-up(md) {
-				font-size: 1.3rem;
+		font-size: map-get($font-size,regular);
+		@include media-up(md) {
+			font-size: map-get($font-size-mq, medium);
 		}
+		@include media-up(sm) {
+			font-size: 1.2rem;
+		}
+
 	}
 	& .btns{
-			@include media-up(md) {
-				flex-direction: column;
-				align-items: center;
-				height: 100px;
-			}
+		@include media-up(md) {
+			flex-direction: column;
+			align-items: center;
+			height: 100px;
 		}
 	}
+}
 .location{
 	& .title{
 		font-size: map-get($font-size,medium);
 		font-weight: 400;
 		@include media-up(md) {
-			font-size: 1.3rem;
+			font-size: map-get($font-size-mq, medium);
+		}
+		@include media-up(sm) {
+			font-size: 1.2rem;
 		}
 	}
 	& .text{
 		font-size: map-get($font-size,small);
 		@include media-up(md) {
 			font-size: map-get($font-size-mq, small);
+		}
+		@include media-up(sm) {
+			font-size: .75rem;
 		}
 	}
 	& .btn{
@@ -388,6 +424,10 @@ body{
 		@include media-up(md) {
 			font-size: map-get($font-size-mq, big);
 		}
+		@include media-up(sm) {
+			font-size: 1.2rem;
+			margin-bottom: .5rem;
+		}
 	}
 	& .text{
 		margin: 0;
@@ -395,13 +435,19 @@ body{
 		@include media-up(md) {
 			font-size: map-get($font-size-mq, regular);
 		}
+		@include media-up(sm) {
+			font-size: .75rem;
+		}
 	}
 	& .left-border{
-			@include bordered;
+		@include bordered;
 			min-height: 200px;
 			margin-top: 4rem;
-			@include media-up(md) {
-				margin-top: 2rem;
+		@include media-up(md) {
+			margin-top: 2rem;
+		}	
+		@include media-up(sm) {
+			min-height: 140px;
 		}	
 	}
 }
@@ -435,16 +481,28 @@ body{
 #hero-nh{
 	@extend %margin;
 	@extend %texts-align;
-	& .name{
-		font-size: map-get($font-size,medium);
-		@include media-up(lg) {
-			font-size: 1.3rem;
+	& .them{
+		margin-bottom: 3rem;
+		@include media-up(sm) {
+				margin-bottom: 1rem;
+			}
+		& .name{
+			font-size: map-get($font-size,medium);
+			@include media-up(lg) {
+				font-size: map-get($font-size-mq, medium)
+			}
+			@include media-up(sm) {
+				font-size: 1rem;
+			}
 		}
 	}
 	& .text{
 		margin: 0;
 		font-size: map-get($font-size,regular);
 		@include media-up(lg) {
+			font-size: 1.2rem;
+		}
+		@include media-up(sm) {
 			font-size: map-get($font-size-mq, regular);
 		}
 	}
@@ -452,11 +510,17 @@ body{
 #hero-qs{
 	@extend %texts-align;
 	@extend %margin;
+	@include media-up(sm) {
+		margin-bottom: 1rem;
+	}
 	& .text{
 		margin: 0;
 		font-size: map-get($font-size,regular);
 		@include media-up(lg) {
 			font-size: map-get($font-size-mq, regular);
+		}
+		@include media-up(sm) {
+			font-size: .75rem;
 		}
 	}
 }
@@ -468,7 +532,11 @@ body{
 		font-weight: map-get($font-weight, medium);
 		margin-bottom: .5rem;
 		@include media-up(lg) {
-			font-size: map-get($font-size-mq, big)
+			font-size: map-get($font-size-mq, big);
+		}
+		@include media-up(sm) {
+			font-size: 1.2rem;
+			margin-bottom: .2rem;
 		}
 	}
 	& .text{
@@ -476,6 +544,9 @@ body{
 		font-size: map-get($font-size,regular);
 		@include media-up(lg) {
 			font-size: map-get($font-size-mq, regular);
+		}
+		@include media-up(sm) {
+			font-size: .75rem;
 		}
 	}
 	& .card-img-overlay{
@@ -492,6 +563,10 @@ body{
 		@include media-up(lg) {
 			font-size: map-get($font-size-mq, big)
 		}
+		@include media-up(sm) {
+			font-size: 1.2rem;
+			margin-bottom: .2rem;
+		}
 	}
 	& .text{
 		margin: 0;
@@ -499,12 +574,19 @@ body{
 		@include media-up(lg) {
 			font-size: map-get($font-size-mq, regular);
 		}
+		@include media-up(sm) {
+			font-size: .75rem;
+		}
 	}
 	& .left-border{
 		@include bordered;
 		min-height: 180px;
+		padding-left: 1.5rem;
 		@include media-up(lg) {
 			min-height: 130px;
+		}
+		@include media-up(sm) {
+			padding-left: 1rem;
 		}
 	}
 }
@@ -517,12 +599,18 @@ body{
 		@include media-up(lg) {
 			font-size: map-get($font-size-mq, big)
 		}
+		@include media-up(sm) {
+			font-size: 1.2rem;
+		}
 	}
 	& .text{
 		font-size: map-get($font-size,regular);
 		margin-bottom: .5rem;
 		@include media-up(lg) {
 			font-size: map-get($font-size-mq, regular);
+		}
+		@include media-up(sm) {
+			font-size: .75rem;
 		}
 	}
 }
@@ -598,11 +686,11 @@ body{
   list-style: none;	
 }
 #aside{
+	grid-area: aside;
 	@include media-up(md) {
 			flex-direction: column;
 		}
   & .utilities{
-  	grid-area: aside;
 		flex-direction: column;
 		@include media-up(md) {
 			align-self: center;
@@ -645,43 +733,30 @@ body{
 		border-width: 2px;
 	}
 }
-.breadcrumb{
+#bread{
 	grid-area: bread;
-	padding-left: 4rem;
-	margin: 3rem 0; 
-	@include media-up(lg) {
-		padding-left: 2.5rem;
-	}
-	@include media-up(md) {
-		padding-left: 5rem;
-	}
-	@include media-up(sm) {
-		padding-left: 4.4rem;
-	}
-	& .breadcrumb-item{
-			font-size: map-get($font-size, medium);
-			font-weight: map-get($font-weight, medium);
-		a{
-			text-decoration: none;
-			color: map-get($colores, text);
-			font-weight: map-get($font-weight, regular);
-			&:hover{
-				color: #5a5a5a;
-			}
-			&:focus{
-				color: #5a5a5a;
+	.breadcrumb{
+		margin: 3rem 0; 
+		& .breadcrumb-item{
+				font-size: map-get($font-size, medium);
+				font-weight: map-get($font-weight, medium);
+			a{
+				text-decoration: none;
+				color: map-get($colores, text);
+				font-weight: map-get($font-weight, regular);
+				&:hover{
+					color: #5a5a5a;
+				}
+				&:focus{
+					color: #5a5a5a;
+				}
 			}
 		}
 	}
 }
 #info{
-	padding-right: 3rem;
-	@include media-up(lg) {
-		padding-right: 2rem;
-	}
 	@include media-up(sm) {
-		padding-right: 4rem;
-		margin-top: 2rem;
+		margin-top: 1rem;
 	}
 	& .text{
 		font-size: map-get($font-size, small);
@@ -702,10 +777,12 @@ body{
 	}
 }
 .pagination{
-	margin-bottom: 5rem;
-	margin-top: 2rem;
+	margin-top: 4rem;
+	transform: scale(1.2);
+	@include media-up(sm) {
+		transform: scale(1);
+	}
 }
-
 .page-item:first-child .page-link{
 	width: 40px;
   height: 40px;
@@ -717,6 +794,9 @@ body{
   &:hover{
   	background-color: map-get($colores, secondary);
 		border-color: map-get($colores, secondary);
+		img{
+			filter: brightness(0) invert(1);
+		}	
   }
 }
 .page-item:not(:first-child) .page-link{
@@ -731,12 +811,16 @@ body{
   &:hover{
   	background-color: map-get($colores, secondary);
 		border-color: map-get($colores, secondary); 
+		img{
+			filter: brightness(0) invert(1);
+		}	
   }
 }
 .page-link{
 	color: map-get($colores, text);
-	padding: .480rem .80rem;
+	padding: .3rem .90rem;
 	font-weight: map-get($font-weight, light);
+	font-size: 1.1rem;
 	&:hover{
 		color: white;
 	}
@@ -747,15 +831,45 @@ body{
 }
 
 .grilla{
-	grid-template-areas: 
+	display: grid;
+	grid-template-areas:
+	"header header header header"
 	"navbar navbar navbar navbar"
-	". bread . ."
+	". bread bread ."
 	". aside productos ."
 	"footer footer footer footer"
 	;
-	grid-template-columns: .5fr 2fr 3fr .5fr;
-	grid-template-rows: 1fr .5fr 3fr 1fr;
+	grid-template-columns: 4.166666665% 25% 66.66666667% 4.166666665%;
+	grid-template-rows: 1.5rem 7rem 8.75rem 82rem 7.875rem;
 	min-height: 100vh;
+	@include media-up(md) {
+		display: grid;
+		grid-template-areas:
+		"header header header"
+		"navbar navbar navbar"
+		". bread ."
+		". aside ."
+		". productos ."
+		"footer footer footer"
+		;
+		grid-template-columns: 8.333335% 83.3333333% 8.333335%;
+		grid-template-rows: 1.5rem 7rem 8.75rem 30rem 72rem 7.875rem;
+		min-height: 100vh;
+	}
+	@include media-up(sm) {
+		display: grid;
+		grid-template-areas:
+		"header header header"
+		"navbar navbar navbar"
+		". bread ."
+		". aside ."
+		". productos ."
+		"footer footer footer"
+		;
+		grid-template-columns: 8.333335% 83.3333333% 8.333335%;
+		grid-template-rows: 1.5rem 7rem 8.75rem 30rem 118rem 7.875rem;
+		min-height: 100vh;
+	}		
 }
 
 .cont{
