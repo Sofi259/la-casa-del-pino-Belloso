@@ -455,8 +455,11 @@ body{
 	& .title{
 		font-size: map-get($font-size,big);
 		font-weight: map-get($font-weight, medium);
-		@include media-up(xl) {
+		@include media-up(xxl) {
 			font-size: 3.5rem;
+		}
+		@include media-up(xl) {
+			font-size: map-get($font-size,big);
 		}
 		@include media-up(lg) {
 			font-size: map-get($font-size,big);
@@ -474,8 +477,11 @@ body{
 		font-weight: map-get($font-weight, medium);
 		margin-top: 2.5rem;
 		font-variant: small-caps;
-		@include media-up(xl) {
+		@include media-up(xxl) {
 			font-size: 3.5rem;
+		}
+		@include media-up(xl) {
+			font-size: map-get($font-size,big);
 		}
 		@include media-up(lg) {
 			font-size: map-get($font-size,big);
