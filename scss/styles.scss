@@ -458,6 +458,9 @@ body{
 		@include media-up(xl) {
 			font-size: 3.5rem;
 		}
+		@include media-up(lg) {
+			font-size: map-get($font-size,big);
+		}
 		@include media-up(md) {
 			font-size: map-get($font-size-mq, big);
 		}
@@ -473,6 +476,9 @@ body{
 		font-variant: small-caps;
 		@include media-up(xl) {
 			font-size: 3.5rem;
+		}
+		@include media-up(lg) {
+			font-size: map-get($font-size,big);
 		}
 		@include media-up(md) {
 			font-size: map-get($font-size-mq, big);
