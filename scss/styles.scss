@@ -18,6 +18,7 @@ body{
   height: 1.5rem;
 }
 #navbar {
+	grid-area: navbar;
   height: 70px;
   width: 100%;
   background: whitesmoke;
@@ -49,7 +50,7 @@ body{
 	  	position: absolute;
       left: -100%;
       top: 110px;
-      width: 50%;
+      width: 64%;
       min-height: 250px;
       background-color: rgba(245, 245, 245, 1);
       transition: 0.3s;
@@ -128,6 +129,7 @@ body{
 	}
 }
 #footer{
+	grid-area: footer;
 	background-color: map-get($colores,principal);
 	position: relative;
 	a{
@@ -234,6 +236,9 @@ body{
 	@include media-up(md) {
 		font-size: map-get($font-size-mq, big);
 	}
+}
+.catalogue{
+	grid-area: productos;
 }
 .catalogue-container{
 	@include media-up(sm) {
@@ -407,6 +412,10 @@ body{
 		@include media-up(md) {
 			font-size: map-get($font-size-mq, big);
 		}
+		@include media-up(sm) {
+			font-size: map-get($font-size-mq, medium);
+			margin: 0;
+		}
 	}
 	& .subtitle{
 		font-size: map-get($font-size,big);
@@ -414,8 +423,12 @@ body{
 		margin-top: 2.5rem;
 		font-variant: small-caps;
 		@include media-up(md) {
+			font-size: map-get($font-size-mq, big);
 			margin-top: 1rem;
-			font-size: 1.4rem;
+		}
+		@include media-up(sm) {
+			margin: 0;
+			font-size: 1.2rem;
 		}
 	}
 }
@@ -513,6 +526,8 @@ body{
 		}
 	}
 }
+
+
 #aside-navbar{
 	& .border-bottom{
     	border-bottom-color: #E5E5E5;
@@ -587,6 +602,7 @@ body{
 			flex-direction: column;
 		}
   & .utilities{
+  	grid-area: aside;
 		flex-direction: column;
 		@include media-up(md) {
 			align-self: center;
@@ -630,6 +646,7 @@ body{
 	}
 }
 .breadcrumb{
+	grid-area: bread;
 	padding-left: 4rem;
 	margin: 3rem 0; 
 	@include media-up(lg) {
@@ -684,10 +701,6 @@ body{
 		}
 	}
 }
-
-
-/*NUMERITOS*/
-
 .pagination{
 	margin-bottom: 5rem;
 	margin-top: 2rem;
@@ -732,3 +745,104 @@ body{
     box-shadow: none;
 	}
 }
+
+.grilla{
+	grid-template-areas: 
+	"navbar navbar navbar navbar"
+	". bread . ."
+	". aside productos ."
+	"footer footer footer footer"
+	;
+	grid-template-columns: .5fr 2fr 3fr .5fr;
+	grid-template-rows: 1fr .5fr 3fr 1fr;
+	min-height: 100vh;
+}
+
+.cont{
+	@include media-up(lg) {
+		flex-direction: column;
+		align-items: center;
+	}
+	.destacado{
+		position: relative;
+		@include media-up(lg) {
+			margin-bottom: 1rem;
+		}	
+		& .name{
+			font-size: map-get($font-size,small);
+			@include media-up(xl) {
+				font-size: map-get($font-size-mq, small);
+			}
+			@include media-up(md) {
+				font-size: map-get($font-size-mq, small);
+			}
+		}
+		& .back{
+			background-color: white;
+				position: absolute;
+				height: 100%;
+				opacity: 0;
+				&:hover{
+					animation-name: slide-in-left;
+					animation-timing-function: ease-out;
+					animation-fill-mode: both;
+					animation-duration: 0.3s;
+				}
+			& .text{
+				font-size: map-get($font-size,small);
+				@include media-up(xl) {
+					font-size: map-get($font-size-mq, small);
+				}
+				li{
+					&::before{
+						content: " ";
+						background-image: url("data:image/svg+xml,%3Csvg width='8' height='18' viewBox='0 0 12 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L11 11L1 21' stroke='%23818181' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+						width: 8px;
+						height: 18px;
+						display: inline-block;
+						margin-right: .2rem;
+					}
+				}
+			}
+			& .title{
+				font-size: map-get($font-size,medium);
+				margin-bottom: .5rem;
+				@include media-up(xl) {
+					font-size: map-get($font-size-mq, medium);
+					font-weight: map-get($font-weight, medium);
+				}
+			}
+			ul{
+				list-style: none;
+				padding-left: 1rem;
+			}
+		}
+		& .front{
+			position: relative;
+		}
+		.H-fina{
+			width: 300px;
+			height: 200px;
+		}
+		%img-container{
+			height: 200px;
+			@include media-up(sm) {
+				height: 150px;
+			}
+		}
+		.H-img{
+			@extend %img-container;
+			width: 200px;
+			@include media-up(sm) {
+				width: 150px;
+			}
+		}
+		.V-img{
+			@extend %img-container;
+			width: 100px;
+			@include media-up(sm) {
+				width: 70px;
+			}
+		}
+	}
+}	
