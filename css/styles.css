@@ -659,6 +659,12 @@ body {
   font-weight: 500;
 }
 
+@media all and (max-width: 1200px) {
+  #gif .title {
+    font-size: 3.5rem;
+  }
+}
+
 @media all and (max-width: 768px) {
   #gif .title {
     font-size: 1.5rem;
@@ -677,6 +683,12 @@ body {
   font-weight: 500;
   margin-top: 2.5rem;
   font-variant: small-caps;
+}
+
+@media all and (max-width: 1200px) {
+  #gif .subtitle {
+    font-size: 3.5rem;
+  }
 }
 
 @media all and (max-width: 768px) {
