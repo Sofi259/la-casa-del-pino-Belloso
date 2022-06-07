@@ -453,11 +453,8 @@ body{
 }
 #gif{
 	& .title{
-		font-size: map-get($font-size,big);
+		font-size: 3.5rem;
 		font-weight: map-get($font-weight, medium);
-		@include media-up(xxl) {
-			font-size: 3.5rem;
-		}
 		@include media-up(xl) {
 			font-size: map-get($font-size,big);
 		}
@@ -473,13 +470,10 @@ body{
 		}
 	}
 	& .subtitle{
-		font-size: map-get($font-size,big);
+		font-size: 3.5rem;
 		font-weight: map-get($font-weight, medium);
 		margin-top: 2.5rem;
 		font-variant: small-caps;
-		@include media-up(xxl) {
-			font-size: 3.5rem;
-		}
 		@include media-up(xl) {
 			font-size: map-get($font-size,big);
 		}
