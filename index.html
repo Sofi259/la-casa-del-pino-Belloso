@@ -46,7 +46,7 @@
             <li class="navbar-link"><a class="no-drop" href="contacto.html">Contacto</a></li>
           </ul>
           <form id="buscar" class="d-flex flex-column justify-content-center me-3">
-            <input class="form-control form-control-sm" type="search" placeholder="buscar" aria-label="Search">
+            <input class="form-control form-control-sm" type="search" placeholder="buscar" aria-label="Search" disabled>
           </form>
           <div class="hamb-container ms-3">
             <button class="menu-hamb btn btn-light">
@@ -63,109 +63,122 @@
           </div>-->
       </nav>
 
-			<div class="row bg-dark">
-				<img class="img-fluid col-12" src="assets/gif_muebles.gif">
+			<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  			<div class="carousel-inner">
+	    			<div class="carousel-item active">
+	      			<img src="fotos_muebles/1.jpg" class="d-block w-100" alt="...">
+	    			</div>
+	    			<div class="carousel-item">
+	      			<img src="fotos_muebles/2.jpg" class="d-block w-100" alt="...">
+	    			</div>
+	    			<div class="carousel-item">
+	      			<img src="fotos_muebles/3.jpeg" class="d-block w-100" alt="...">
+	    			</div>
+  			</div>
 			</div>
+
 			<div class="col d-flex justify-content-center mt-5">
 				<p class="prod-title">PRODUCTOS DESTACADOS</p>
 			</div>
-			<section>
-				<div class="cont d-flex justify-content-evenly my-5">
+			<section class="cont d-flex justify-content-evenly my-5">
+				<!--<div>-->
 			  	<div class="destacado d-flex justify-content-center col-10 col-sm-8 col-md-6 col-lg-3">
-					<div class="front card col-12">
-				   		<div class="col-12 d-flex flex-column align-items-center">
-				   			<div class="H-img mt-5 d-flex justify-content-center">
-					   			<img src="fotos_muebles/dormitorio/comoda.jpg" class="card-img img-fluid" alt="comoda">
-					     	</div>
-						   	<div class="body">
-						       	<p class="name card-title fw-light mt-5">CÓMODA</p>
-					     	</div>
-				   		</div>
-				   	</div>
-				   	<div class="back card col-12 d-flex justify-content-center">
-				   		<div class="col-10 d-flex flex-column align-self-center">
-				   			<div class="border-bottom border-2 mb-2">
-					   			<p class="title">Descripción:</p>
-					   		</div>
-					   		<p class="text">Cómoda con seis cajones, dos chicos y cuatro grandes.</p>
-					    	<p class="text">Medidas (cm):</p>
-					   		<ul class="text">
-					   			<li>Largo: 100</li>
-					   			<li>Ancho: 70</li>
-					   			<li>Alto: 90</li>
-					   		</ul>
+						<div class="front card col-12 align-items-center">
+				   		<div class="H-img mt-5 d-flex justify-content-center">
+					   		<img src="fotos_muebles/dormitorio/comoda.jpg" class="card-img img-fluid" alt="comoda">
+					    </div>
+					    <button id="btn-descripcion" type="button" onclick="mostrar1()" class="btn col-12 d-flex align-items-center justify-content-center">
+								<p class="text-uppercase">Ver descripción</p>
+							</button>
+						    <p class="name card-title fw-light mt-5">CÓMODA</p>
+						  <div id="descripcion-1" class="back card col-12">
+						  	<button class="close col-12 d-flex justify-content-end align-self-start mb-3 pe-3 pt-3" type="button" onclick="cerrar1()">
+					   			<img src="assets/cerrar.svg" alt="close">
+					   		</button>	
+					   		<div class="col-10 d-flex flex-column align-self-center">
+					   			<div class="border-bottom border-2 mb-2">
+						   			<p class="title">Descripción:</p>
+						   		</div>
+						   		<p class="text">Cómoda con seis cajones, dos chicos y cuatro grandes.</p>
+						    	<p class="text">Medidas (cm):</p>
+						   		<ul class="text">
+						   			<li>Largo: 100</li>
+						   			<li>Ancho: 70</li>
+						   			<li>Alto: 90</li>
+						   		</ul>
+					    	</div>	
 				    	</div>	
-			    	</div>	
-			  	</div>
+				   	</div>
 
-			  	<div class="destacado d-flex justify-content-center col-10 col-sm-8 col-md-6 col-lg-3">
-					<div class="front card col-12">
-				   		<div class="col-12 d-flex flex-column align-items-center">
-				   			<div class="V-img mt-5 d-flex justify-content-center">
-					   			<img src="fotos_muebles/dormitorio/ropero_espejo.jpg" class="card-img img-fluid" alt="ropero">
-					     	</div>
-						   	<div class="body">
-						       	<p class="name card-title fw-light mt-5">ROPERO</p>
-					     	</div>
-				   		</div>
-				   	</div>
-				   	<div class="back card col-12 d-flex justify-content-center">
-				   		<div class="col-10 d-flex flex-column align-self-center">
-				   			<div class="border-bottom border-2 mb-2">
-					   			<p class="title">Descripción:</p>
-					   		</div>
-					   		<p class="text">Ropero con espejo, con dos cajones y lugar para colgar.</p>
-					    	<p class="text">Medidas (cm):</p>
-					   		<ul class="text">
-					   			<li>Largo: 75</li>
-					   			<li>Ancho: 60</li>
-					   			<li>Alto: 160</li>
-					   		</ul>
+				   	<div class="front card col-12 align-items-center">
+				   		<div class="V-img mt-5 d-flex justify-content-center">
+					   		<img src="fotos_muebles/dormitorio/ropero_espejo.jpg" class="card-img img-fluid" alt="comoda">
+					    </div>
+					    <button id="btn-descripcion" type="button" onclick="mostrar2()" class="btn col-12 d-flex align-items-center justify-content-center">
+								<p class="text-uppercase">Ver descripción</p>
+							</button>
+						    <p class="name card-title fw-light mt-5">ROPERO</p>
+						  <div id="descripcion-2" class="back card col-12">
+						  	<button class="close col-12 d-flex justify-content-end align-self-start mb-3 pe-3 pt-3" type="button" onclick="cerrar2()">
+					   			<img src="assets/cerrar.svg" alt="close">
+					   		</button>	
+					   		<div class="col-10 d-flex flex-column align-self-center">
+					   			<div class="border-bottom border-2 mb-2">
+						   			<p class="title">Descripción:</p>
+						   		</div>
+						   		<p class="text">Ropero con espejo, con dos cajones y lugar para colgar.</p>
+						    	<p class="text">Medidas (cm):</p>
+						   		<ul class="text">
+						   			<li>Largo: 75</li>
+						   			<li>Ancho: 60</li>
+						   			<li>Alto: 160</li>
+						   		</ul>
+					    	</div>	
 				    	</div>	
-			    	</div>	
-			  	</div>
+				   	</div>
 
-			  	<div class="destacado d-flex justify-content-center col-10 col-sm-8 col-md-6 col-lg-3">
-					<div class="front card col-12">
-				   		<div class="col-12 d-flex flex-column align-items-center">
-				   			<div class="H-img mt-5 d-flex justify-content-center">
-					   			<img src="fotos_muebles/living/modular.jpg" class="card-img img-fluid" alt="modular">
-					     	</div>
-						   	<div class="body">
-						       	<p class="name card-title fw-light mt-5">MODULAR</p>
-					     	</div>
-				   		</div>
-				   	</div>
-				   	<div class="back card col-12 d-flex justify-content-center">
-				   		<div class="col-10 d-flex flex-column align-self-center">
-				   			<div class="border-bottom border-2 mb-2">
-					   			<p class="title">Descripción:</p>
-					   		</div>
-					   		<p class="text">Modular con dos estantes interiores, tres cajones y cinco espacios amplios para guardado.</p>
-					    	<p class="text">Medidas (cm):</p>
-					   		<ul class="text">
-					   			<li>Largo: 120</li>
-					   			<li>Ancho: 55</li>
-					   			<li>Alto: 180</li>
-					   		</ul>
+				   	<div class="front card col-12 align-items-center">
+				   		<div class="H-img mt-5 d-flex justify-content-center">
+					   		<img src="fotos_muebles/living/modular.jpg" class="card-img img-fluid" alt="comoda">
+					    </div>
+					    <button id="btn-descripcion" type="button" onclick="mostrar3()" class="btn col-12 d-flex align-items-center justify-content-center">
+								<p class="text-uppercase">Ver descripción</p>
+							</button>
+						    <p class="name card-title fw-light mt-5">MODULAR</p>
+						  <div id="descripcion-3" class="back card col-12">
+						  	<button class="close col-12 d-flex justify-content-end align-self-start mb-3 pe-3 pt-3" type="button" onclick="cerrar3()">
+					   			<img src="assets/cerrar.svg" alt="close">
+					   		</button>	
+					   		<div class="col-10 d-flex flex-column align-self-center">
+					   			<div class="border-bottom border-2 mb-2">
+						   			<p class="title">Descripción:</p>
+						   		</div>
+						   		<p class="text">Modular con dos estantes interiores, tres cajones y cinco espacios amplios para guardado.</p>
+						    	<p class="text">Medidas (cm):</p>
+						   		<ul class="text">
+						   			<li>Largo: 120</li>
+						   			<li>Ancho: 5</li>
+						   			<li>Alto: 180</li>
+						   		</ul>
+					    	</div>	
 				    	</div>	
-			    	</div>	
+				   	</div>
 			  	</div>
-				</div>  	  		
-		</section>	
-		<div id="footer">
-			<div class="py-4 d-flex flex-column align-items-center">
-				<div class="col-lg-12 col-sm-4 d-flex justify-content-center mb-3">
-					<a class="mx-3" href="#"><img src="assets/facebook.svg" alt="facebook"></a>
-					<a class="mx-3" href="#"><img src="assets/instagram.svg" alt="instagram"></a>
-					<a class="mx-3" href="#"><img src="assets/whatsapp.svg" alt="whatsapp"></a>
-				</div>	
-				<div class="col-lg-3 col-sm-5 d-flex justify-content-center">
-					<img class="me-2" src="assets/email.svg" alt="email">
-					<a href="mailto:lacasadelpino.sgo@hotmail.com" class="fs-6 fw-light">lacasadelpino.sgo@hotmail.com</a>
-				</div>		
+				<!--</div>-->	  		
+			</section>	
+			<div id="footer">
+				<div class="py-4 d-flex flex-column align-items-center">
+					<div class="col-lg-12 col-sm-4 d-flex justify-content-center mb-3">
+						<a class="mx-3" href="#"><img src="assets/facebook.svg" alt="facebook"></a>
+						<a class="mx-3" href="#"><img src="assets/instagram.svg" alt="instagram"></a>
+						<a class="mx-3" href="#"><img src="assets/whatsapp.svg" alt="whatsapp"></a>
+					</div>	
+					<div class="col-lg-3 col-sm-5 d-flex justify-content-center">
+						<img class="me-2" src="assets/email.svg" alt="email">
+						<a href="mailto:lacasadelpino.sgo@hotmail.com" class="fs-6 fw-light">lacasadelpino.sgo@hotmail.com</a>
+					</div>		
+				</div>
 			</div>
-		</div>
 	<script type="text/javascript" src="js/script.js"></script>	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

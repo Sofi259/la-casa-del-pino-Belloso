@@ -75,3 +75,24 @@ function desplegar(desplegable){
 		element.setAttribute('state', 'closed');
 	}
 }
+
+
+function mostrar1(){
+	document.getElementById("descripcion-1").style.display = "flex"
+}
+function cerrar1(){
+	document.getElementById("descripcion-1").style.display = "none"
+}
+function mostrar2(){
+	document.getElementById("descripcion-2").style.display = "flex"
+}
+function cerrar2(){
+	document.getElementById("descripcion-2").style.display = "none"
+}
+function mostrar3(){
+	document.getElementById("descripcion-3").style.display = "flex"
+}
+function cerrar3(){
+	document.getElementById("descripcion-3").style.display = "none"
+}
+
