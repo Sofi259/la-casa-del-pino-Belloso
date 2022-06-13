@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 .contact-card .btn:hover, .contact-card .btn:active, .contact-card .btn:focus, .location .btn:hover, .location .btn:active, .location .btn:focus, .cont .destacado .front .btn:hover, .cont .destacado .front .btn:active, .cont .destacado .front .btn:focus {
   background-color: #2e600e;
   border-color: #2e600e;
@@ -492,7 +492,7 @@ body {
 
 @media all and (max-width: 576px) {
   .contact-card .btn {
-    font-size: .85rem;
+    font-size: 1rem;
   }
 }
 
@@ -517,6 +517,7 @@ body {
 @media all and (max-width: 576px) {
   .contact-card .title {
     font-size: 1.2rem;
+    font-weight: 500;
   }
 }
 
@@ -542,6 +543,7 @@ body {
 @media all and (max-width: 576px) {
   .location .title {
     font-size: 1.2rem;
+    font-weight: 500;
   }
 }
 
@@ -564,7 +566,7 @@ body {
 
 @media all and (max-width: 576px) {
   .location .btn {
-    font-size: .85rem;
+    font-size: 1rem;
   }
 }
 
@@ -991,7 +993,7 @@ body {
 }
 
 #bread .breadcrumb .breadcrumb-item {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 500;
 }
 
@@ -1249,7 +1251,7 @@ body {
 
 @media all and (max-width: 576px) {
   .cont .destacado .front .btn {
-    font-size: .85rem;
+    font-size: 1rem;
   }
 }
 
@@ -1263,7 +1265,7 @@ body {
 
 @media all and (max-width: 992px) {
   .cont .destacado .front .btn {
-    height: 3rem;
+    height: 2.3rem;
   }
 }
 
@@ -1278,6 +1280,12 @@ body {
 
 .cont .destacado .catalogue .catalogue-container .prod .H-img, .catalogue .catalogue-container .prod .cont .destacado .H-img, .cont .destacado .catalogue .catalogue-container .prod-2 .H-img, .catalogue .catalogue-container .prod-2 .cont .destacado .H-img, .cont .destacado .catalogue .catalogue-container .prod-2-last .H-img, .catalogue .catalogue-container .prod-2-last .cont .destacado .H-img, .cont .destacado .catalogue .catalogue-container .prod .V-img, .catalogue .catalogue-container .prod .cont .destacado .V-img, .cont .destacado .catalogue .catalogue-container .prod-2 .V-img, .catalogue .catalogue-container .prod-2 .cont .destacado .V-img, .cont .destacado .catalogue .catalogue-container .prod-2-last .V-img, .catalogue .catalogue-container .prod-2-last .cont .destacado .V-img, .cont .destacado .H-img, .cont .destacado .V-img {
   height: 200px;
+}
+
+@media all and (max-width: 992px) {
+  .cont .destacado .catalogue .catalogue-container .prod .H-img, .catalogue .catalogue-container .prod .cont .destacado .H-img, .cont .destacado .catalogue .catalogue-container .prod-2 .H-img, .catalogue .catalogue-container .prod-2 .cont .destacado .H-img, .cont .destacado .catalogue .catalogue-container .prod-2-last .H-img, .catalogue .catalogue-container .prod-2-last .cont .destacado .H-img, .cont .destacado .catalogue .catalogue-container .prod .V-img, .catalogue .catalogue-container .prod .cont .destacado .V-img, .cont .destacado .catalogue .catalogue-container .prod-2 .V-img, .catalogue .catalogue-container .prod-2 .cont .destacado .V-img, .cont .destacado .catalogue .catalogue-container .prod-2-last .V-img, .catalogue .catalogue-container .prod-2-last .cont .destacado .V-img, .cont .destacado .H-img, .cont .destacado .V-img {
+    margin-bottom: 1rem;
+  }
 }
 
 .cont .destacado .H-img {
@@ -1322,24 +1330,18 @@ body {
 
 .carousel-inner .page .title {
   font-size: 3.5rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (max-width: 576px) {
   .carousel-inner .page .title {
     font-size: 2rem;
+    margin: 0;
   }
 }
 
 @media all and (max-width: 768px) {
   .carousel-inner .page .title {
-    font-size: 1.5rem;
-  }
-}
-
-@media all and (max-width: 576px) {
-  .carousel-inner .page .title {
-    font-size: 1.3rem;
-    margin: 0;
+    font-size: 2rem;
   }
 }

@@ -4,7 +4,7 @@
   border-color: map-get($colores,secondary);
   font-weight: 700;
   @include media-up(sm) {
-		font-size: .85rem;
+		font-size: map-get($font-size-mq, regular);
 	}
   &:active:focus{
   	box-shadow: none;

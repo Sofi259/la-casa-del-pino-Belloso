@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 @import "variables";
 @import "mixins";
 
@@ -363,6 +363,7 @@ body{
 		}
 		@include media-up(sm) {
 			font-size: 1.2rem;
+			font-weight: map-get($font-weight, medium);
 		}
 	}
 	& .btns{
@@ -376,12 +377,13 @@ body{
 .location{
 	& .title{
 		font-size: map-get($font-size,medium);
-		font-weight: 400;
+		font-weight: map-get($font-weight, regular);
 		@include media-up(md) {
 			font-size: map-get($font-size-mq, medium);
 		}
 		@include media-up(sm) {
 			font-size: 1.2rem;
+			font-weight: map-get($font-weight, medium);
 		}
 	}
 	& .text{
@@ -704,7 +706,7 @@ body{
 	.breadcrumb{
 		margin: 3rem 0;
 		& .breadcrumb-item{
-				font-size: map-get($font-size, medium);
+				font-size: map-get($font-size, big);
 				font-weight: map-get($font-weight, medium);
 			a{
 				text-decoration: none;
@@ -924,7 +926,7 @@ body{
 			  transition: all ease 1s;
 			  height: 0;
 			  @include media-up(lg) {
-					height: 3rem;
+					height: 2.3rem;
 				}
 			  p{
   				margin-bottom: 0;
@@ -937,6 +939,9 @@ body{
 		}
 		%img-container{
 			height: 200px;
+			@include media-up(lg) {
+				margin-bottom: 1rem;
+			}
 		}
 		.H-img{
 			@extend %img-container;
@@ -948,8 +953,6 @@ body{
 		}
 	}
 }	
-
-
 @keyframes shadow-drop-2-center {
   0% {
     -webkit-transform: translateZ(0);
@@ -976,23 +979,18 @@ body{
     opacity: 1;
   }
 }
-
-
 .carousel-inner{
 	& .page{
 		height: 100%;
 		& .title{
 			font-size: 3.5rem;
-			font-weight: map-get($font-weight, medium);
-			@include media-up(xl) {
-				font-size: map-get($font-size,big);
+			font-weight: map-get($font-weight, semibold);
+			@include media-up(sm) {
+				font-size: 2rem;
+				margin: 0;
 			}
 			@include media-up(md) {
-				font-size: map-get($font-size-mq, big);
-			}
-			@include media-up(sm) {
-				font-size: map-get($font-size-mq, medium);
-				margin: 0;
+				font-size: 2rem;
 			}
 		}
 	}
