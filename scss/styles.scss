@@ -27,6 +27,9 @@ body{
   padding: 0.5rem;
   flex-wrap: nowrap;
   & #buscar{
+  	@include media-up(md) {
+      transform: scale(.7);
+    }
   	@include media-up(lg) {
   		transform: scale(.8);
       order: 3;
@@ -36,9 +39,11 @@ body{
     margin-left: 1rem;
     @include media-up(md) {
     	order: 2;
-      transform: scale(.8);
       margin-left: 0;
     }
+    @include media-up(lg) {
+  		transform: scale(.8);
+  	}
 	}
 	& .navbar-pags {
 	  list-style-type: none;
@@ -833,48 +838,22 @@ body{
 	}		
 }
 
-.prod-title{
-	font-size: map-get($font-size,big);
-	font-weight: map-get($font-weight, medium);
-	@include media-up(md) {
-		font-size: map-get($font-size-mq, big);
-	}
-}
-
-@keyframes fade-in-fwd {
-  0% {
-    -webkit-transform: translateZ(-80px);
-            transform: translateZ(-80px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fade-out-bck {
-  0% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateZ(-80px);
-            transform: translateZ(-80px);
-    opacity: 0;
-  }
-}
 .cont{
-	@include media-up(lg) {
-		flex-direction: column;
-		align-items: center;
+	.prod-title{
+		font-size: map-get($font-size,big);
+		font-weight: map-get($font-weight, medium);
+		margin: 5rem 0;
+		@include media-up(md) {
+			font-size: map-get($font-size-mq, big);
+			margin: 3rem 0;
+		}
 	}
 	.destacado{
 		position: relative;
 		@include media-up(lg) {
 			margin-bottom: 1rem;
+			flex-direction: column;
+			align-items: center;
 		}
 		& .name{
 			font-size: map-get($font-size, regular);
@@ -925,6 +904,9 @@ body{
 		}
 		& .front{
 			position: relative;
+			@include media-up(md) {
+				margin-bottom: 1.5rem;
+			}
 			&:hover{
 				-webkit-animation: shadow-drop-2-center 0.4s ease-out forwards;
 			& > .btn{
@@ -941,6 +923,9 @@ body{
 			  transform-origin: bottom center;
 			  transition: all ease 1s;
 			  height: 0;
+			  @include media-up(lg) {
+					height: 3rem;
+				}
 			  p{
   				margin-bottom: 0;
 				}
@@ -952,23 +937,14 @@ body{
 		}
 		%img-container{
 			height: 200px;
-			@include media-up(sm) {
-				height: 150px;
-			}
 		}
 		.H-img{
 			@extend %img-container;
 			width: 200px;
-			@include media-up(sm) {
-				width: 150px;
-			}
 		}
 		.V-img{
 			@extend %img-container;
 			width: 100px;
-			@include media-up(sm) {
-				width: 70px;
-			}
 		}
 	}
 }	
@@ -986,6 +962,18 @@ body{
             transform: translateZ(50px);
     -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
             box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+@keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
   }
 }
 
