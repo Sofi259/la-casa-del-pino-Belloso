@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-.contact-card .btn:hover, .contact-card .btn:active, .contact-card .btn:focus, .location .btn:hover, .location .btn:active, .location .btn:focus, .cont .destacado .front .btn:hover, .cont .destacado .front .btn:active, .cont .destacado .front .btn:focus {
+.catalogue .catalogue-container .prod .front .btn:hover, .catalogue .catalogue-container .prod-2 .front .btn:hover, .catalogue .catalogue-container .prod-2-last .front .btn:hover, .catalogue .catalogue-container .prod .front .btn:active, .catalogue .catalogue-container .prod-2 .front .btn:active, .catalogue .catalogue-container .prod-2-last .front .btn:active, .catalogue .catalogue-container .prod .front .btn:focus, .catalogue .catalogue-container .prod-2 .front .btn:focus, .catalogue .catalogue-container .prod-2-last .front .btn:focus, .contact-card .btn:hover, .contact-card .btn:active, .contact-card .btn:focus, .location .btn:hover, .location .btn:active, .location .btn:focus, .cont .destacado .front .btn:hover, .cont .destacado .front .btn:active, .cont .destacado .front .btn:focus {
   background-color: #2e600e;
   border-color: #2e600e;
 }
@@ -346,29 +346,32 @@ body {
   background-color: white;
   position: absolute;
   height: 100%;
-  opacity: 0;
+  display: none;
+  animation: fade-in-fwd 0.6s ease-out both;
 }
 
-.catalogue .catalogue-container .prod .back:hover, .catalogue .catalogue-container .prod-2 .back:hover, .catalogue .catalogue-container .prod-2-last .back:hover {
-  animation-name: slide-in-left;
-  animation-timing-function: ease-out;
-  animation-fill-mode: both;
-  animation-duration: 0.3s;
+.catalogue .catalogue-container .prod .back .close, .catalogue .catalogue-container .prod-2 .back .close, .catalogue .catalogue-container .prod-2-last .back .close {
+  background-color: white;
+  border: none;
+}
+
+.catalogue .catalogue-container .prod .back .close:hover img, .catalogue .catalogue-container .prod-2 .back .close:hover img, .catalogue .catalogue-container .prod-2-last .back .close:hover img {
+  filter: brightness(0.7);
 }
 
 .catalogue .catalogue-container .prod .back .text, .catalogue .catalogue-container .prod-2 .back .text, .catalogue .catalogue-container .prod-2-last .back .text {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 @media all and (max-width: 992px) {
   .catalogue .catalogue-container .prod .back .text, .catalogue .catalogue-container .prod-2 .back .text, .catalogue .catalogue-container .prod-2-last .back .text {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
 }
 
 @media all and (max-width: 576px) {
   .catalogue .catalogue-container .prod .back .text, .catalogue .catalogue-container .prod-2 .back .text, .catalogue .catalogue-container .prod-2-last .back .text {
-    font-size: .9rem;
+    font-size: 0.875rem;
   }
 }
 
@@ -386,6 +389,24 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='16' viewBox='0 0 12 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L11 11L1 21' stroke='%23818181' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     width: 6px;
     height: 14px;
+  }
+}
+
+.catalogue .catalogue-container .prod .back .subtitle, .catalogue .catalogue-container .prod-2 .back .subtitle, .catalogue .catalogue-container .prod-2-last .back .subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+@media all and (max-width: 992px) {
+  .catalogue .catalogue-container .prod .back .subtitle, .catalogue .catalogue-container .prod-2 .back .subtitle, .catalogue .catalogue-container .prod-2-last .back .subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .catalogue .catalogue-container .prod .back .subtitle, .catalogue .catalogue-container .prod-2 .back .subtitle, .catalogue .catalogue-container .prod-2-last .back .subtitle {
+    font-size: 0.875rem;
   }
 }
 
@@ -410,49 +431,85 @@ body {
   position: relative;
 }
 
+@media all and (max-width: 768px) {
+  .catalogue .catalogue-container .prod .front, .catalogue .catalogue-container .prod-2 .front, .catalogue .catalogue-container .prod-2-last .front {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.catalogue .catalogue-container .prod .front:hover, .catalogue .catalogue-container .prod-2 .front:hover, .catalogue .catalogue-container .prod-2-last .front:hover {
+  -webkit-animation: shadow-drop-2-center 0.4s ease-out forwards;
+}
+
+.catalogue .catalogue-container .prod .front:hover > .btn, .catalogue .catalogue-container .prod-2 .front:hover > .btn, .catalogue .catalogue-container .prod-2-last .front:hover > .btn {
+  height: 3rem;
+}
+
+.catalogue .catalogue-container .prod .front .btn, .catalogue .catalogue-container .prod-2 .front .btn, .catalogue .catalogue-container .prod-2-last .front .btn {
+  color: #fff;
+  background-color: #3C721A;
+  border-color: #3C721A;
+  font-weight: 700;
+  border-radius: 0;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  bottom: 50px;
+  transform-origin: bottom center;
+  transition: all ease 1s;
+  height: 0;
+}
+
+@media all and (max-width: 576px) {
+  .catalogue .catalogue-container .prod .front .btn, .catalogue .catalogue-container .prod-2 .front .btn, .catalogue .catalogue-container .prod-2-last .front .btn {
+    font-size: 1rem;
+  }
+}
+
+.catalogue .catalogue-container .prod .front .btn:active:focus, .catalogue .catalogue-container .prod-2 .front .btn:active:focus, .catalogue .catalogue-container .prod-2-last .front .btn:active:focus {
+  box-shadow: none;
+}
+
+.catalogue .catalogue-container .prod .front .btn:focus, .catalogue .catalogue-container .prod-2 .front .btn:focus, .catalogue .catalogue-container .prod-2-last .front .btn:focus {
+  box-shadow: none;
+}
+
+@media all and (max-width: 992px) {
+  .catalogue .catalogue-container .prod .front .btn, .catalogue .catalogue-container .prod-2 .front .btn, .catalogue .catalogue-container .prod-2-last .front .btn {
+    height: 2.3rem;
+  }
+}
+
+.catalogue .catalogue-container .prod .front .btn p, .catalogue .catalogue-container .prod-2 .front .btn p, .catalogue .catalogue-container .prod-2-last .front .btn p {
+  margin-bottom: 0;
+}
+
 .catalogue .catalogue-container .prod .H-img, .catalogue .catalogue-container .prod .V-img, .catalogue .catalogue-container .prod-2 .H-img, .catalogue .catalogue-container .prod-2 .V-img, .catalogue .catalogue-container .prod-2-last .H-img, .catalogue .catalogue-container .prod-2-last .V-img {
-  height: 200px;
+  height: 250px;
 }
 
 @media all and (max-width: 992px) {
   .catalogue .catalogue-container .prod .H-img, .catalogue .catalogue-container .prod .V-img, .catalogue .catalogue-container .prod-2 .H-img, .catalogue .catalogue-container .prod-2 .V-img, .catalogue .catalogue-container .prod-2-last .H-img, .catalogue .catalogue-container .prod-2-last .V-img {
-    height: 150px;
-  }
-}
-
-@media all and (max-width: 576px) {
-  .catalogue .catalogue-container .prod .H-img, .catalogue .catalogue-container .prod .V-img, .catalogue .catalogue-container .prod-2 .H-img, .catalogue .catalogue-container .prod-2 .V-img, .catalogue .catalogue-container .prod-2-last .H-img, .catalogue .catalogue-container .prod-2-last .V-img {
-    height: 180px;
+    height: 200px;
+    margin-bottom: 1rem;
   }
 }
 
 .catalogue .catalogue-container .prod .H-img, .catalogue .catalogue-container .prod-2 .H-img, .catalogue .catalogue-container .prod-2-last .H-img {
-  width: 200px;
+  width: 250px;
 }
 
 @media all and (max-width: 992px) {
   .catalogue .catalogue-container .prod .H-img, .catalogue .catalogue-container .prod-2 .H-img, .catalogue .catalogue-container .prod-2-last .H-img {
-    width: 150px;
-  }
-}
-
-@media all and (max-width: 576px) {
-  .catalogue .catalogue-container .prod .H-img, .catalogue .catalogue-container .prod-2 .H-img, .catalogue .catalogue-container .prod-2-last .H-img {
-    width: 180px;
+    width: 200px;
   }
 }
 
 .catalogue .catalogue-container .prod .V-img, .catalogue .catalogue-container .prod-2 .V-img, .catalogue .catalogue-container .prod-2-last .V-img {
-  width: 100px;
+  width: 150px;
 }
 
 @media all and (max-width: 992px) {
-  .catalogue .catalogue-container .prod .V-img, .catalogue .catalogue-container .prod-2 .V-img, .catalogue .catalogue-container .prod-2-last .V-img {
-    width: 70px;
-  }
-}
-
-@media all and (max-width: 576px) {
   .catalogue .catalogue-container .prod .V-img, .catalogue .catalogue-container .prod-2 .V-img, .catalogue .catalogue-container .prod-2-last .V-img {
     width: 100px;
   }
@@ -1041,7 +1098,7 @@ body {
 }
 
 .pagination {
-  margin-top: 4rem;
+  margin: 4rem 0;
   transform: scale(1.2);
 }
 
@@ -1110,7 +1167,7 @@ body {
   display: grid;
   grid-template-areas: "header header header header" "navbar navbar navbar navbar" ". bread bread ." ". aside productos ." "footer footer footer footer";
   grid-template-columns: 4.166666665% 25% 66.66666667% 4.166666665%;
-  grid-template-rows: 1.5rem 7rem 8.875rem 82rem 7.875rem;
+  grid-template-rows: 1.5rem 7rem 8.875rem auto 7.875rem;
   min-height: 100vh;
 }
 
@@ -1119,7 +1176,7 @@ body {
     display: grid;
     grid-template-areas: "header header header" "navbar navbar navbar" ". bread ." ". aside ." ". productos ." "footer footer footer";
     grid-template-columns: 8.333335% 83.3333333% 8.333335%;
-    grid-template-rows: 1.5rem 7rem 7rem 30rem 72rem 7.875rem;
+    grid-template-rows: 1.5rem 7rem 7rem auto 72rem 7.875rem;
     min-height: 100vh;
   }
 }
@@ -1199,6 +1256,24 @@ body {
   margin-right: .2rem;
 }
 
+.cont .destacado .back .subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+@media all and (max-width: 992px) {
+  .cont .destacado .back .subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .cont .destacado .back .subtitle {
+    font-size: 0.875rem;
+  }
+}
+
 .cont .destacado .back .title {
   font-size: 1.6rem;
   margin-bottom: .5rem;
@@ -1220,7 +1295,7 @@ body {
   position: relative;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 992px) {
   .cont .destacado .front {
     margin-bottom: 1.5rem;
   }
@@ -1279,7 +1354,7 @@ body {
 }
 
 .cont .destacado .catalogue .catalogue-container .prod .H-img, .catalogue .catalogue-container .prod .cont .destacado .H-img, .cont .destacado .catalogue .catalogue-container .prod-2 .H-img, .catalogue .catalogue-container .prod-2 .cont .destacado .H-img, .cont .destacado .catalogue .catalogue-container .prod-2-last .H-img, .catalogue .catalogue-container .prod-2-last .cont .destacado .H-img, .cont .destacado .catalogue .catalogue-container .prod .V-img, .catalogue .catalogue-container .prod .cont .destacado .V-img, .cont .destacado .catalogue .catalogue-container .prod-2 .V-img, .catalogue .catalogue-container .prod-2 .cont .destacado .V-img, .cont .destacado .catalogue .catalogue-container .prod-2-last .V-img, .catalogue .catalogue-container .prod-2-last .cont .destacado .V-img, .cont .destacado .H-img, .cont .destacado .V-img {
-  height: 200px;
+  height: 250px;
 }
 
 @media all and (max-width: 992px) {
@@ -1288,12 +1363,30 @@ body {
   }
 }
 
+@media all and (max-width: 576px) {
+  .cont .destacado .catalogue .catalogue-container .prod .H-img, .catalogue .catalogue-container .prod .cont .destacado .H-img, .cont .destacado .catalogue .catalogue-container .prod-2 .H-img, .catalogue .catalogue-container .prod-2 .cont .destacado .H-img, .cont .destacado .catalogue .catalogue-container .prod-2-last .H-img, .catalogue .catalogue-container .prod-2-last .cont .destacado .H-img, .cont .destacado .catalogue .catalogue-container .prod .V-img, .catalogue .catalogue-container .prod .cont .destacado .V-img, .cont .destacado .catalogue .catalogue-container .prod-2 .V-img, .catalogue .catalogue-container .prod-2 .cont .destacado .V-img, .cont .destacado .catalogue .catalogue-container .prod-2-last .V-img, .catalogue .catalogue-container .prod-2-last .cont .destacado .V-img, .cont .destacado .H-img, .cont .destacado .V-img {
+    height: 200px;
+  }
+}
+
 .cont .destacado .H-img {
-  width: 200px;
+  width: 250px;
+}
+
+@media all and (max-width: 576px) {
+  .cont .destacado .H-img {
+    width: 200px;
+  }
 }
 
 .cont .destacado .V-img {
-  width: 100px;
+  width: 150px;
+}
+
+@media all and (max-width: 576px) {
+  .cont .destacado .V-img {
+    width: 100px;
+  }
 }
 
 @keyframes shadow-drop-2-center {

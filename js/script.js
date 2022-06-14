@@ -37,19 +37,19 @@ function desplegar(desplegable){
 			break;
 		case 'living':
 			var elementAct = 'desplegable_living';
-			var altura = 130;
+			var altura = (window.matchMedia("(max-width: 768px)").matches) ? 100 : 130;
 			break;
 		case 'comedor':
 			var elementAct = 'desplegable_comedor';
-			var altura = 100;
+			var altura = (window.matchMedia("(max-width: 768px)").matches) ? 70 : 100;
 			break;
 		case 'dormitorio':
 			var elementAct = 'desplegable_dormitorio';
-			var altura = 250;
+			var altura = (window.matchMedia("(max-width: 768px)").matches) ? 190 : 250;
 			break;	
 		case 'cocina':
 			var elementAct = 'desplegable_cocina';
-			var altura = 180;
+			var altura = (window.matchMedia("(max-width: 768px)").matches) ? 130 : 180;
 			break;
 		case 'varios':
 			var elementAct = 'desplegable_varios';
@@ -76,23 +76,17 @@ function desplegar(desplegable){
 	}
 }
 
+var btnDescr = [...document.querySelectorAll(".btn-descripcion")];
 
-function mostrar1(){
-	document.getElementById("descripcion-1").style.display = "flex"
-}
-function cerrar1(){
-	document.getElementById("descripcion-1").style.display = "none"
-}
-function mostrar2(){
-	document.getElementById("descripcion-2").style.display = "flex"
-}
-function cerrar2(){
-	document.getElementById("descripcion-2").style.display = "none"
-}
-function mostrar3(){
-	document.getElementById("descripcion-3").style.display = "flex"
-}
-function cerrar3(){
-	document.getElementById("descripcion-3").style.display = "none"
-}
+btnDescr.map(btn => btn.addEventListener('click',() => {
+	var target	= btn.getAttribute('desc-target');
+	document.getElementById(target).style.display = "flex";
+}));
+
+var btnClose = [...document.querySelectorAll(".close")];
+
+btnClose.map(btn => btn.addEventListener('click',() => {
+	var target	= btn.getAttribute('desc-target');
+	document.getElementById(target).style.display = "none";
+}));
 
