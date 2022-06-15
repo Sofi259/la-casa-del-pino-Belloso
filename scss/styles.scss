@@ -178,7 +178,6 @@ body{
 		}
 	}
 }
-
 %btn-light{
 	background-color: #F5F5F5;
 	border-color: #F5F5F5;
@@ -192,7 +191,6 @@ body{
 		@extend %btn-light;
 	}
 }
-
 %texts-align{
 	text-align: justify;
 }
@@ -225,50 +223,50 @@ body{
 	}
 }
 .catalogue{
-		grid-area: productos;
-		.catalogue-container{
+	grid-area: productos;
+	.catalogue-container{
+		@include media-up(sm) {
+			flex-direction: column;
+			align-items: center;
+		}
+		& .prod-2{
 			@include media-up(sm) {
-				flex-direction: column;
-				align-items: center;
+				margin-top: 1.5rem;
 			}
-			& .prod-2{
-				@include media-up(sm) {
-					margin-top: 1.5rem;
-				}
+		}
+		& .prod-2-last{
+			display: flex;
+			@include media-up(sm) {
+				display: none;
 			}
-			& .prod-2-last{
-				display: flex;
-				@include media-up(sm) {
-					display: none;
-				}
-			}
-			& .prod, .prod-2, .prod-2-last{
-				position: relative;
-				& .front{
-					height: 100%;
-					& .name{
-						font-size: map-get($font-size, regular);
-						font-weight: map-get($font-weight, medium);
-						@include media-up(lg) {
-							font-size: map-get($font-size-mq, regular);
-						}
+		}
+		& .prod, .prod-2, .prod-2-last{
+			position: relative;
+			& .front{
+				height: 100%;
+				& .name{
+					font-size: map-get($font-size, regular);
+					font-weight: map-get($font-weight, medium);
+					@include media-up(lg) {
+						font-size: map-get($font-size-mq, regular);
 					}
 				}
-				& .back{
+			}
+			& .back{
+				background-color: white;
+				position: absolute;
+				height: 100%;
+				display: none;
+				animation: fade-in-fwd 0.6s ease-out both;
+				& .close{
 					background-color: white;
-					position: absolute;
-					height: 100%;
-					display: none;
-					animation: fade-in-fwd 0.6s ease-out both;
-					& .close{
-						background-color: white;
-						border: none;
-						&:hover{
-							img{
-								filter: brightness(.7);
-							}
+					border: none;
+					&:hover{
+						img{
+							filter: brightness(.7);
 						}
-					}	
+					}
+				}	
 				& .text{
 					font-size: map-get($font-size, regular);
 					@include media-up(lg) {
@@ -447,12 +445,12 @@ body{
 		justify-content: space-between;
 		margin-bottom: 3rem;
 		@include media-up(md) {
-				justify-content: center;
-				gap: 1.2rem;
-			}
+			justify-content: center;
+			gap: 1.2rem;
+		}
 		@include media-up(sm) {
-				margin-bottom: 1rem;
-			}
+			margin-bottom: 1rem;
+		}
 		& .name{
 			font-size: map-get($font-size,medium);
 			@include media-up(lg) {
@@ -580,39 +578,37 @@ body{
 		}
 	}
 }
-
-
 #aside-navbar{
 	& .border-bottom{
-    	border-bottom-color: #E5E5E5;
+    border-bottom-color: #E5E5E5;
 	}
 	& .pags{
-		  list-style-type: none;
-    	margin: 0;
-    	padding: 0;
-    	height: 100%;
+	 	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	height: 100%;
 	}
 	& .navbar-link{
-    	font-size: 26px;
-    	@include media-up(lg) {
-				font-size: 20px;
-			}
-    	& .dropdown{
-    		@extend %decoracion-lista;
-    	}
-    	a{
-    		@extend %decoracion-lista;
-    		&:focus{
-    			color: #5a5a5a;
-    		}
-    		&:hover{
-    			color: #5a5a5a;
+    font-size: 26px;
+    @include media-up(lg) {
+			font-size: 20px;
+		}
+  	& .dropdown{
+  		@extend %decoracion-lista;
+  	}
+  	a{
+  		@extend %decoracion-lista;
+  		&:focus{
+  			color: #5a5a5a;
+  		}
+  		&:hover{
+  			color: #5a5a5a;
     	}
     }
 	}
 	& .es-desplegable{
-	cursor: pointer;
-	overflow: hidden;
+		cursor: pointer;
+		overflow: hidden;
 		& .dropdown{
 			&::after{
 				content: " ";
@@ -654,8 +650,8 @@ body{
 #aside{
 	grid-area: aside;
 	@include media-up(md) {
-			flex-direction: column;
-		}
+		flex-direction: column;
+	}
   & .utilities{
 		flex-direction: column;
 		@include media-up(md) {
@@ -710,8 +706,8 @@ body{
 	.breadcrumb{
 		margin: 3rem 0;
 		& .breadcrumb-item{
-				font-size: map-get($font-size, big);
-				font-weight: map-get($font-weight, medium);
+			font-size: map-get($font-size, big);
+			font-weight: map-get($font-weight, medium);
 			a{
 				text-decoration: none;
 				color: map-get($colores, text);
@@ -735,7 +731,7 @@ body{
 		font-weight: map-get($font-weight, light);
 		margin-bottom: 0px;
 		@include media-up(sm) {
-		font-size: map-get($font-size-mq, regular);
+			font-size: map-get($font-size-mq, regular);
 		}
 	}
 	& .form-select{
@@ -801,7 +797,6 @@ body{
     box-shadow: none;
 	}
 }
-
 .grilla{
 	display: grid;
 	grid-template-areas:
@@ -843,7 +838,6 @@ body{
 		min-height: 100vh;
 	}		
 }
-
 .cont{
 	.prod-title{
 		font-size: map-get($font-size,big);
@@ -930,7 +924,7 @@ body{
 			}
 			&:hover{
 				-webkit-animation: shadow-drop-2-center 0.4s ease-out forwards;
-			& > .btn{
+				& > .btn{
 					height: 3rem;
 					@include media-up(lg) {
 						height: 2.6rem;

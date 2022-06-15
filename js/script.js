@@ -11,10 +11,7 @@ document.querySelectorAll(".no-drop, .desplegable-sub-item, .desplegable-item").
     navMenu.classList.remove("active");
 }))
 
-// Funcion para hacer el efecto de desplegable.
-
 function desplegar(desplegable){
-	// Array de uls que se deben desplegar.
 	var elementos = [
 		'desplegable_productos',
 		'desplegable_nosotros',
@@ -25,7 +22,6 @@ function desplegar(desplegable){
 		'desplegable_varios',
 	];
 
-	// Switch para seleccionar elemento segun el parametro de la funcion.
 	switch (desplegable) {
 		case 'productos':
 			var elementAct = 'desplegable_productos';
@@ -56,10 +52,9 @@ function desplegar(desplegable){
 			var altura = 150;
 			break;		
 	}
-	// Variable de seleccion del <ul> a desplegar.
+
 	var element = document.getElementById(elementAct);
 
-	// Cambio de estilos para hacer el efecto desplegable, junto con el cierre de los demas elementos.
 	if (element.getAttribute('state') == 'closed') {
 		element.style.height = altura+'px';
 		element.setAttribute('state', 'opened');
