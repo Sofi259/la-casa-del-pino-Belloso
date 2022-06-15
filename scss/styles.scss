@@ -349,39 +349,6 @@ body{
 					}
 				}
 			}
-			%img-container{
-				height: 250px;
-				@include media-up(lg) {
-					height: 200px;
-					margin-bottom: 1rem;
-				}
-			}
-			.H-img{
-				@extend %img-container;
-				width: 250px;
-				@include media-up(lg) {
-					width: 200px;
-				}
-			}
-			.V-img{
-				@extend %img-container;
-				width: 150px;
-				@include media-up(lg) {
-					width: 100px;
-				}
-			}
-			.H-fina{
-				width: 250px;
-				height: 150px;
-				@include media-up(md) {
-					width: 180px;
-					height: 130px;
-				}
-				@include media-up(lg) {
-					width: 180px;
-					height: 130px;
-				}
-			}
 		}
 	}
 }
@@ -988,33 +955,6 @@ body{
 				}
 			}
 		}
-		.H-fina{
-			width: 300px;
-			height: 200px;
-		}
-		%img-container{
-			height: 250px;
-			@include media-up(lg) {
-				margin-bottom: 1rem;
-			}
-			@include media-up(sm) {
-				height: 200px;
-			}
-		}
-		.H-img{
-			@extend %img-container;
-			width: 250px;
-			@include media-up(sm) {
-				width: 200px;
-			}
-		}
-		.V-img{
-			@extend %img-container;
-			width: 150px;
-			@include media-up(sm) {
-				width: 100px;
-			}
-		}
 	}
 }	
 @keyframes shadow-drop-2-center {
@@ -1043,19 +983,16 @@ body{
     opacity: 1;
   }
 }
-.carousel-inner{
-	& .page{
-		height: 100%;
-		& .title{
-			font-size: 3.5rem;
-			font-weight: map-get($font-weight, semibold);
-			@include media-up(sm) {
-				font-size: 2rem;
-				margin: 0;
-			}
-			@include media-up(md) {
-				font-size: 2rem;
-			}
+#gif{
+	& .title{
+		font-size: 3.5rem;
+		font-weight: map-get($font-weight, semibold);
+		@include media-up(sm) {
+			font-size: 2rem;
+			margin: 0;
+		}
+		@include media-up(md) {
+			font-size: 2rem;
 		}
 	}
 }
