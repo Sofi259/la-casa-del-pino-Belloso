@@ -334,6 +334,7 @@ body {
 
 .catalogue .catalogue-container .prod .front .name, .catalogue .catalogue-container .prod-2 .front .name, .catalogue .catalogue-container .prod-2-last .front .name {
   font-size: 1.2rem;
+  font-weight: 500;
 }
 
 @media all and (max-width: 992px) {
@@ -442,7 +443,13 @@ body {
 }
 
 .catalogue .catalogue-container .prod .front:hover > .btn, .catalogue .catalogue-container .prod-2 .front:hover > .btn, .catalogue .catalogue-container .prod-2-last .front:hover > .btn {
-  height: 2.3rem;
+  height: 3rem;
+}
+
+@media all and (max-width: 992px) {
+  .catalogue .catalogue-container .prod .front:hover > .btn, .catalogue .catalogue-container .prod-2 .front:hover > .btn, .catalogue .catalogue-container .prod-2-last .front:hover > .btn {
+    height: 2.6rem;
+  }
 }
 
 .catalogue .catalogue-container .prod .front .btn, .catalogue .catalogue-container .prod-2 .front .btn, .catalogue .catalogue-container .prod-2-last .front .btn {
@@ -454,7 +461,7 @@ body {
   padding: 0;
   border: 0;
   position: absolute;
-  bottom: 50px;
+  bottom: 0px;
   transform-origin: bottom center;
   transition: all ease 1s;
   height: 0;
@@ -476,7 +483,7 @@ body {
 
 @media all and (max-width: 992px) {
   .catalogue .catalogue-container .prod .front .btn, .catalogue .catalogue-container .prod-2 .front .btn, .catalogue .catalogue-container .prod-2-last .front .btn {
-    height: 2.3rem;
+    height: 2.6rem;
   }
 }
 
@@ -786,7 +793,7 @@ body {
 #mision .card-img-overlay .text {
   margin: 0;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 @media all and (max-width: 992px) {
@@ -1218,6 +1225,7 @@ body {
 
 .cont .destacado .name {
   font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .cont .destacado .back {
@@ -1309,6 +1317,12 @@ body {
   height: 3rem;
 }
 
+@media all and (max-width: 992px) {
+  .cont .destacado .front:hover > .btn {
+    height: 2.6rem;
+  }
+}
+
 .cont .destacado .front .btn {
   color: #fff;
   background-color: #3C721A;
@@ -1318,7 +1332,7 @@ body {
   padding: 0;
   border: 0;
   position: absolute;
-  bottom: 50px;
+  bottom: 0px;
   transform-origin: bottom center;
   transition: all ease 1s;
   height: 0;
@@ -1340,7 +1354,7 @@ body {
 
 @media all and (max-width: 992px) {
   .cont .destacado .front .btn {
-    height: 2.3rem;
+    height: 2.6rem;
   }
 }
 
