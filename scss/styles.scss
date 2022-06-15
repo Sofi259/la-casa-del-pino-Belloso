@@ -914,8 +914,11 @@ body{
 				}
 			}
 			& .text{
-				font-size: map-get($font-size,small);
-				@include media-up(xl) {
+				font-size: map-get($font-size, regular);
+				@include media-up(lg) {
+					font-size: map-get($font-size-mq, regular);
+				}
+				@include media-up(sm) {
 					font-size: map-get($font-size-mq, small);
 				}
 				li{

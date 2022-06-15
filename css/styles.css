@@ -1246,10 +1246,16 @@ body {
 }
 
 .cont .destacado .back .text {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (max-width: 992px) {
+  .cont .destacado .back .text {
+    font-size: 1rem;
+  }
+}
+
+@media all and (max-width: 576px) {
   .cont .destacado .back .text {
     font-size: 0.875rem;
   }
