@@ -1035,6 +1035,12 @@ body {
   font-weight: 500;
 }
 
+@media all and (max-width: 576px) {
+  #bread .breadcrumb .breadcrumb-item {
+    font-size: 1.5rem;
+  }
+}
+
 #bread .breadcrumb .breadcrumb-item a {
   text-decoration: none;
   color: #818181;

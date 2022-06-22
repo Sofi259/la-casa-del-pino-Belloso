@@ -723,6 +723,9 @@ body{
 		& .breadcrumb-item{
 			font-size: map-get($font-size, big);
 			font-weight: map-get($font-weight, medium);
+			@include media-up(sm) {
+				font-size: map-get($font-size-mq, big);
+			}
 			a{
 				text-decoration: none;
 				color: map-get($colores, text);
