@@ -70,12 +70,22 @@ body{
 	}
 	& .desplegable {
 	 	@include desplegables;
+	 	padding-left: 1.5rem;
+	 	@include media-up(md) {
+	 		padding-left: 0;
+	 		width: 116%;
+	 	}
 	  & ul{
 	  	padding-left: 10px;
 	  }
 	}
 	& .desplegable-1{
 		@include desplegables;
+		padding-left: 1.5rem;
+	 	@include media-up(md) {
+	 		padding-left: 0;
+	 		width: 116%;
+	 	}
 	}
 	& .desplegable-item{
 		@extend %decoracion-lista;
@@ -109,6 +119,10 @@ body{
       display: flex;
       flex-direction: column;
       align-items: center;
+      @include media-up(md) {
+      	align-items: start;
+				width: 70%;
+      }	
 		}
 		@include media-up(lg) {
 			font-size: 20px;
@@ -268,6 +282,7 @@ body{
 					}
 				}	
 				& .text{
+				padding-left: 0;
 					font-size: map-get($font-size, regular);
 					@include media-up(lg) {
 						font-size: map-get($font-size-mq, regular);
@@ -875,6 +890,7 @@ body{
 				}
 			}
 			& .text{
+				padding-left: 0;
 				font-size: map-get($font-size, regular);
 				@include media-up(lg) {
 					font-size: map-get($font-size-mq, regular);
